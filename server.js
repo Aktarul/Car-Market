@@ -19,6 +19,10 @@ app.use(bodyParser.json());
 var productRoute = require('./routes/product');
 app.use('/product', productRoute);
 
+var userRoute = require('./routes/user');
+app.use('/user', userRoute);
+
+
 app.listen(3000, err => {
     if(err) {
         console.log('error in listening port: 3000');

@@ -93,7 +93,7 @@ var updateProduct = (req, res, next) => {
                         data: product
                     });
                 }
-            })
+            });
         }
     });
 }
