@@ -22,6 +22,9 @@ app.use('/product', productRoute);
 var userRoute = require('./routes/user');
 app.use('/user', userRoute);
 
+var authRoute = require('./routes/auth');
+app.use('/auth', authRoute);
+
 
 app.listen(3000, err => {
     if(err) {

@@ -16,7 +16,8 @@ var createUser = (req, res, next) => {
             username: userName,
             password: password,
             wishList: wishList,
-            buyList: buyList
+            buyList: buyList,
+            isAdmin: false
         });
 
         User.addUser(myUser, () => {
