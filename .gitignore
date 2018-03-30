@@ -17,6 +17,15 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# debug log
+npm-debug.log
+
+# Node modules
+node_modules
+
+# workspace.xml file
+.idea/workspace.xml
+
 # =========================
 # Operating System Files
 # =========================

@@ -1,0 +1,24 @@
+{
+  "name": "carmarket",
+  "version": "1.0.0",
+  "description": "Online car shopping",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aktarul/Car-Market.git"
+  },
+  "author": "Aktarul Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aktarul/Car-Market/issues"
+  },
+  "homepage": "https://github.com/Aktarul/Car-Market#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.12"
+  }
+}
