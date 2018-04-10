@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Http, HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { AuthService } from './service/auth.service';
 import { ProductService } from './service/product.service';
 import { UserService } from './service/user.service';
 import { RouterModule, Router } from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
+import {ValidateService} from './service/validate.service';
 
 
 @NgModule({
@@ -26,6 +30,10 @@ import { RouterModule, Router } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlashMessagesModule,
 
     RouterModule.forRoot( [
       { path: 'home', component: HomeComponent, pathMatch: 'full' },
@@ -39,7 +47,9 @@ import { RouterModule, Router } from '@angular/router';
     AuthGuardService,
     AuthService,
     ProductService,
-    UserService
+    UserService,
+    FlashMessagesService,
+    ValidateService
   ],
   bootstrap: [AppComponent]
 })
