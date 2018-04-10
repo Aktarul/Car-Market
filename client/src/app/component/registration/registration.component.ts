@@ -49,6 +49,7 @@ export class RegistrationComponent implements OnInit {
 
     this.authService.registerUser(user)
       .subscribe( data => {
+        console.log(data);
         if (data.success) {
           this._flashMessagesService.show('Your are now Registered.', {cssClass: 'alert-success'});
           this.router.navigate(['/login']);

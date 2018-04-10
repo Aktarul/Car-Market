@@ -10,12 +10,15 @@
   overflow: hidden !important;
   -webkit-overflow-scrolling: touch;
 }
-body, html{
+.bg{
   height: 100%;
   background-repeat: no-repeat;
-  background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/
+  background:url(https://latestautocar.com/wp-content/uploads/2017/03/latest-ferrari-cars-blue-by-img-k7d-and-ferrari-cars-blue-new-on-wallpapers.jpg);
   font-family: 'Oxygen', sans-serif;
   background-size: cover;
+  padding: 20px 20px;
 }
 
 .main{
@@ -86,22 +89,23 @@ input::-webkit-input-placeholder {
   background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
   background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
   background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
-  background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
 }
 .main-center{
   margin-top: 30px;
   margin: 0 auto;
   max-width: 400px;
-  padding: 10px 40px;
-  background:#009edf;
+  padding: 15px 25px;
+  background: rgba(51, 204, 255,0.5);
   color: #FFF;
+  border-radius: 15px;
   text-shadow: none;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
 
 }
+
 span.input-group-addon i {
   color: #009edf;
   font-size: 17px;

@@ -33,8 +33,7 @@ import {ValidateService} from './service/validate.service';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    FlashMessagesModule,
-
+    FlashMessagesModule.forRoot(),
     RouterModule.forRoot( [
       { path: 'home', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },

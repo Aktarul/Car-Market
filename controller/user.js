@@ -22,6 +22,7 @@ var createUser = (req, res, next) => {
 
         User.addUser(myUser, () => {
             res.status(201).json({
+                success: true,
                 'message': 'user created'
             })
         });

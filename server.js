@@ -2,6 +2,7 @@ var express = require('express');
 var config = require('./config');
 var app = express();
 var mongoose = require('mongoose');
+var cors = require('cors');
 
 mongoose.connect(config.database,  (err) => {
     if(err) {
@@ -14,7 +15,7 @@ mongoose.connect(config.database,  (err) => {
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(cors());
 
 var productRoute = require('./routes/product');
 app.use('/product', productRoute);
