@@ -41,10 +41,12 @@ export class RegistrationComponent implements OnInit {
 
     if (!this.validate.checkEmpty(user)) {
       this._flashMessagesService.show('Fill all the fields!', { cssClass: 'alert-danger'});
+      return;
     }
 
     if (!this.validate.validEmail(user.email)) {
-      // this._flashMessagesService.show('Email is not valid!', { cssClass: 'alert'});
+       this._flashMessagesService.show('Email is not valid!', { cssClass: 'alert-danger'});
+       return;
     }
 
     this.authService.registerUser(user)
