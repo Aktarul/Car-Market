@@ -17,6 +17,7 @@ import { RouterModule, Router } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
 import {ValidateService} from './service/validate.service';
+import { ProfileComponent } from './component/profile/profile.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {ValidateService} from './service/validate.service';
     NavigationComponent,
     FooterComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import {ValidateService} from './service/validate.service';
       { path: 'home', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegistrationComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', redirectTo: '/home', pathMatch: 'full' }
     ])

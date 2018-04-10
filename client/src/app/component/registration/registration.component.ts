@@ -28,7 +28,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSignUp() {
-    console.log('Hello World: ' + this.name + ' ' + this.username + ' ' + this.password + ' ' + this.email + ' ' + this.confirm);
+    // console.log('Hello World: ' + this.name + ' ' + this.username + ' ' + this.password + ' ' + this.email + ' ' + this.confirm);
     const user = {
       name: this.name,
       email: this.email,
