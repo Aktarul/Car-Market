@@ -18,7 +18,7 @@ var userLogin = (req, res, next) => {
                     var token = jwt.sign(user, config.secret, {expiresIn: config.tokenexp});
                     return res.status(201).json({success: true, data: user, token: token });
                 } else {
-                    return res.statue(404).json({
+                    return res.status(404).json({
                         success: false,
                         message: 'password don\'t match'
                     })
