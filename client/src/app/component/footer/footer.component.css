@@ -7,7 +7,7 @@
 	font: bold 11px sans-serif;
 
 	padding: 5px 5px;
-	margin-top: 5px;
+	margin-top: 0px; /* margin top of footer */
 }
 
 .footer-distributed .footer-left,
@@ -28,7 +28,7 @@
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
+	font: normal 50px 'Cookie', cursive;
 	margin: 0;
 }
 
