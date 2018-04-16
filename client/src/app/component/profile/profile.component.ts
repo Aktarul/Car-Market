@@ -19,10 +19,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.authService.getProfile().subscribe(response => {
-    //   this.users = response.data;
-    //    console.log('user data:' + this.users);
-    // });
+    this.authService.getProfile().subscribe(response => {
+      this.users = response.data;
+       console.log('user data:' + this.users);
+    });
 
      // console.log('Here ' + localStorage.getItem('loginId'));
 

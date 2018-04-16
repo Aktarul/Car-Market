@@ -5,14 +5,6 @@
     <div  class="thumbnail">
       <h3 style="float: left">{{product.code}}</h3>
 
-      <button (click)="delFunc(product)" *ngIf="isAdmin" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-sm">
-        <span class="glyphicon glyphicon-trash"></span> Trash
-      </button>
-
-      <button *ngIf="isAdmin" (click)="editProduct(product._id)" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-sm">
-        <span class="glyphicon glyphicon-edit"></span> Edit
-      </button>
-
 
       <h3 (click)="detailsView(product._id)" style="color: #26734d;text-align: center">{{product.name}}</h3>
 
@@ -26,8 +18,17 @@
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           </a>
           <p class="description">{{ product.description }}</p>
+
+          <button (click)="delFunc(product)" *ngIf="isAdmin" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-lg">
+            Trash<br>
+          </button>
+
+          <button *ngIf="isAdmin" (click)="editProduct(product._id)" style="float: left;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-lg">
+            Edit
+          </button>
         </div>
       </div>
+
     </div>
   </div>
 </div>

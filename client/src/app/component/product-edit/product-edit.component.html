@@ -1,72 +1,109 @@
-<h2 class="page-header" style="text-align: center">Edit Product</h2>
+<!--<h2 class="page-header" style="text-align: center">Edit Product</h2>-->
 
-<form (submit)="update(product._id)" >
-
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" [(ngModel)]="product.name" name="name" class="form-control">
-    </div>
-  </div>
-
-
-
-
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Code</label>
-    <div class="col-sm-10">
-      <input type="text" [(ngModel)]="product.code" name="code" class="form-control">
-    </div>
-  </div>
+<!--<form (submit)="update(product._id)" >-->
 
   <!--<div class="form-group row">-->
-  <!--<label class="col-sm-2 col-form-label">Picture</label>-->
-  <!--<div class="col-sm-10">-->
-  <!--<input type="text" [(ngModel)]="picture" name="picture" class="form-control">-->
+    <!--<label class="col-sm-2 col-form-label">Name</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="text" [(ngModel)]="product.name" name="name" class="form-control">-->
+    <!--</div>-->
   <!--</div>-->
+
+
+
+
+  <!--&lt;!&ndash;<div class="form-group row">&ndash;&gt;-->
+    <!--&lt;!&ndash;<label class="col-sm-2 col-form-label">Code</label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="col-sm-10">&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="text" [(ngModel)]="product.code" name="code" class="form-control">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;<div class="form-group row">&ndash;&gt;-->
+  <!--&lt;!&ndash;<label class="col-sm-2 col-form-label">Picture</label>&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="col-sm-10">&ndash;&gt;-->
+  <!--&lt;!&ndash;<input type="text" [(ngModel)]="picture" name="picture" class="form-control">&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">Description</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="textarea" [(ngModel)]="product.description" name="description" class="form-control">-->
+    <!--</div>-->
   <!--</div>-->
 
 
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Description</label>
-    <div class="col-sm-10">
-      <input type="textarea" [(ngModel)]="product.description" name="description" class="form-control">
+
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">Price</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="text" [(ngModel)]="product.price" name="price" class="form-control">-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+  <!--&lt;!&ndash;<div class="form-group row">&ndash;&gt;-->
+    <!--&lt;!&ndash;<label class="col-sm-2 col-form-label">Category</label>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="col-sm-10" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<select type="text" [(ngModel)]="product.category" name="category" class="form-control">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<option *ngFor="let cat of category" >{{cat.category}}</option>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;</select>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--<div class="form-group row">-->
+    <!--<label class="col-sm-2 col-form-label">Availability</label>-->
+    <!--<div class="col-sm-10">-->
+      <!--<input type="text" [(ngModel)]="product.avl" name="avl" class="form-control">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>-->
+
+
+<!--</form>-->
+
+
+<div class="bg">
+  <div class="main-center">
+    <div class="form-group">
+      <h3 style="text-align: center">Edit Product</h3>
+      <label class="cols-sm-2 control-label">Name</label>
+      <div class="cols-sm-10">
+        <div class="input-group">
+          <span class="input-group-addon"></span>
+          <input type="text" [(ngModel)]="product.name" name="name" class="form-control">
+        </div>
+      </div>
+    </div> <br>
+
+
+    <div class="form-group">
+      <label class="cols-sm-2 control-label">Description</label>
+      <div class="cols-sm-10">
+        <div class="input-group">
+          <span class="input-group-addon"></span>
+          <input type="textarea" [(ngModel)]="product.description" name="description" class="form-control">
+        </div>
+      </div>
+    </div>  <br>
+
+    <div class="form-group">
+      <label class="cols-sm-2 control-label">Price</label>
+      <div class="cols-sm-10">
+        <div class="input-group">
+          <span class="input-group-addon"></span>
+          <input type="text" [(ngModel)]="product.price" name="price" class="form-control">
+        </div>
+      </div>
     </div>
+
+    <button class="btn btn-block btn-primary" (click)="update(product._id)">Update Info</button>
   </div>
+</div>
 
-
-
-
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Price</label>
-    <div class="col-sm-10">
-      <input type="text" [(ngModel)]="product.price" name="price" class="form-control">
-    </div>
-  </div>
-
-
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Category</label>
-    <div class="col-sm-10" >
-      <select type="text" [(ngModel)]="product.category" name="category" class="form-control">
-
-        <option *ngFor="let cat of category" >{{cat.category}}</option>
-
-      </select>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Availability</label>
-    <div class="col-sm-10">
-      <input type="text" [(ngModel)]="product.avl" name="avl" class="form-control">
-    </div>
-  </div>
-
-
-
-  <!--<input type="submit" class="btn btn-primary">-->
-  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-
-
-</form>

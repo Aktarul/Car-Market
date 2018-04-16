@@ -11,10 +11,15 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class NavigationComponent implements OnInit {
 
+  public isAdmin = 0;
   constructor(public productService: ProductService,
-              private authService: AuthService,
+              public authService: AuthService,
               private router: Router,
-              private flashMessage: FlashMessagesService) { }
+              private flashMessage: FlashMessagesService) {
+    if(localStorage.getItem('isAdmin') == 'true')
+      this.isAdmin = 1;
+    console.log(this.isAdmin);
+  }
 
   ngOnInit() {
   }
