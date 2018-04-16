@@ -38,6 +38,7 @@ var getProduct = (req, res, next) => {
             });
         }
         else {
+
             return res.status(200).json({
                 success: true,
                 data: product
@@ -55,6 +56,9 @@ var getAllProduct = (req, res, next) => {
             });
         }
         else {
+            console.log("product have been gotten");
+            console.log(product);
+
             return res.status(200).json({
                 success: true,
                 data: product
@@ -70,6 +74,8 @@ var updateProduct = (req, res, next) => {
 
     Product.findById(req.params.id, (err, product) => {
         if(err){
+            console.log(err);
+
             return res.status(404).json({
                 message: err,
                 success: false

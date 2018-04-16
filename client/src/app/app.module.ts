@@ -18,6 +18,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
 import {ValidateService} from './service/validate.service';
 import { ProfileComponent } from './component/profile/profile.component';
+import {ProductComponent} from "./component/product/product.component";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProfileComponent } from './component/profile/profile.component';
     FooterComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { ProfileComponent } from './component/profile/profile.component';
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegistrationComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'product', component: ProductComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', redirectTo: '/home', pathMatch: 'full' }
     ])
@@ -51,7 +54,8 @@ import { ProfileComponent } from './component/profile/profile.component';
     ProductService,
     UserService,
     FlashMessagesService,
-    ValidateService
+    ValidateService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
