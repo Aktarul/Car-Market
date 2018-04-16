@@ -6,7 +6,8 @@ var authConttoller = require('../controller/auth');
 router.post('/', productController.createProduct);
 router.get('/:id', productController.getProduct);
 router.get('/', productController.getAllProduct);
-router.patch('/:id', authConttoller.userAuthenticate, productController.updateProduct);
+router.post('/:id', productController.updateProduct);
+router.patch('/:id', productController.updateProduct2);
 router.delete('/:id', authConttoller.userAuthenticate, productController.deleteProduct);
 
 module.exports = router;

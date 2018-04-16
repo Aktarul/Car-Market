@@ -14,11 +14,19 @@ import { AuthService } from './service/auth.service';
 import { ProductService } from './service/product.service';
 import { UserService } from './service/user.service';
 import { RouterModule, Router } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
 import {ValidateService} from './service/validate.service';
 import { ProfileComponent } from './component/profile/profile.component';
-import {ProductComponent} from "./component/product/product.component";
+import {ProductComponent} from './component/product/product.component';
+import {PhotoUploadComponent} from './component/photo-upload/photo-upload.component';
+
+import { FileUploadModule } from 'ng2-file-upload';
+import { FormsModule} from '@angular/forms';
+import { ProductEditComponent } from './component/product-edit/product-edit.component';
+import {CartComponent} from "./component/cart/cart.component";
+import {EditProfileComponent} from "./component/editprofile/editprofile.component";
+import { PaymentSystemComponent } from './component/payment-system/payment-system.component';
 
 
 @NgModule({
@@ -30,12 +38,18 @@ import {ProductComponent} from "./component/product/product.component";
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    ProductComponent
+    ProductComponent,
+    PhotoUploadComponent,
+    ProductEditComponent,
+    CartComponent,
+    EditProfileComponent,
+    PaymentSystemComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    FileUploadModule,
     ReactiveFormsModule,
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot( [
@@ -44,6 +58,11 @@ import {ProductComponent} from "./component/product/product.component";
       { path: 'register', component: RegistrationComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'product', component: ProductComponent },
+      { path: 'photo/:id', component: PhotoUploadComponent },
+      { path: 'product/:id', component: ProductEditComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'editprofile/:id', component: EditProfileComponent },
+      { path: 'payment', component: PaymentSystemComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', redirectTo: '/home', pathMatch: 'full' }
     ])

@@ -45,7 +45,7 @@ var createUser = (req, res, next) => {
 
 
 var getUser = (req, res, next) => {
-    User.findById(req.params.id, (err, User) => {
+    User.findById(req.params.id, (err, user) => {
         if(err){
             return res.status(404).json({
                 message: err,
@@ -55,7 +55,7 @@ var getUser = (req, res, next) => {
         else {
             return res.status(200).json({
                 success: true,
-                data: User
+                data: user
             });
         }
     });

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../../service/auth.service";
-import { FlashMessagesService } from "angular2-flash-messages";
-import { Router } from "@angular/router";
-import { ValidateService } from "../../service/validate.service";
+import { AuthService } from '../../service/auth.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { Router } from '@angular/router';
+import { ValidateService } from '../../service/validate.service';
 
 
 @Component({
@@ -48,9 +48,14 @@ export class LoginComponent implements OnInit {
 
         // console.log(user.email);
 
-        if(res.success) {
-          // console.log(res.data);
+        if (res.success) {
+
+          localStorage.setItem('loginId', res.data._id);
+          // console.log(res.data._id);
+          // console.log('isAdmin: ' + res.data.isAdmin);
           // console.log(res.token);
+
+          localStorage.setItem('isAdmin', JSON.parse(res.data.isAdmin));
           this.authService.storeUserData(res.token, res.data);
 
           this._flashMessagesService.show('You are now Logged in!', { cssClass: 'alert-success' });
@@ -59,7 +64,7 @@ export class LoginComponent implements OnInit {
           this._flashMessagesService.show('Service is not available!', { cssClass: 'alert-danger' });
           this.router.navigate(['/login']);
         }
-      })
+      });
   }
 
 }

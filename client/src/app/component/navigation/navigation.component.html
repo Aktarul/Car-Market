@@ -40,6 +40,12 @@
             </ul>
           </li>
 
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+            <a [routerLink]="['/cart']"><i class="glyphicon glyphicon-shopping-cart"></i>
+            <span class="badge">{{ productService.getProductCartSize() || cart }}</span>
+            </a>
+          </li>
+
           <li><a href="#">Contact</a></li>
 
         </ul>

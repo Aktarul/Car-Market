@@ -1,38 +1,67 @@
-<div class="jumbotron text-center">
-  <h1 style="text-align: center">Ride Zone</h1>
-  <p class="lead"> This is the lasgest online Market in Bangladesh</p>
 
 
-</div>
+
+<!--<div *ngIf="products" class="row">-->
+  <!--<div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">-->
+
+    <!--<h3 style="text-align: center">{{product.name}}</h3>-->
+
+    <!--<div  class="thumbnail">-->
+      <!--<h3 style="float: left">{{product.code}}</h3>-->
+
+      <!--<button style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-sm">-->
+        <!--<span class="glyphicon glyphicon-trash"></span> Trash-->
+      <!--</button>-->
+
+      <!--<button style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-sm">-->
+        <!--<span class="glyphicon glyphicon-edit"></span> Edit-->
+      <!--</button>-->
+
+
+      <!--&lt;!&ndash;<h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>&ndash;&gt;-->
+
+      <!--<img *ngIf="product.picture" src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">-->
+      <!--<div class="caption">-->
+        <!--<p class="description">{{ product.description }}</p>-->
+        <!--<div class="clearfix">-->
+          <!--<div class="price pull-left">${{ product.price }}</div>-->
+
+
+          <!--<a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
 
 <div *ngIf="products" class="row">
-  <div *ngFor="let product of products">
-    <div class="col-md-3" style="margin-left: 10px">
-      <h3 style="text-align: center">{{product.name}}</h3>
-      <!--<img src="http://localhost:3000/{{product.picture}}" height="170" width="250">-->
+  <div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">
+
+    <div  class="thumbnail">
+      <h3 style="float: left">{{product.code}}</h3>
+
+      <button (click)="delFunc(product)" *ngIf="isAdmin" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-sm">
+        <span class="glyphicon glyphicon-trash"></span> Trash
+      </button>
+
+      <button *ngIf="isAdmin" (click)="editProduct(product._id)" style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-edit"></span> Edit
+      </button>
 
 
-      <p>{{product.description}}</p>
+      <h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>
+
+      <img (click)="detailsView(product._id)" src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">
+      <div class="caption">
+        <p class="description">{{ product.description }}</p>
+        <div class="clearfix">
+          <div class="price pull-left">${{ product.price }}</div>
+
+
+          <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+        </div>
+      </div>
     </div>
-    <!--<div class="col-md-3">-->
-    <!--<h3 style="text-align: center">Special Zeep</h3>-->
-    <!--<img src="../../../assets/images/proxima-the-car-bike-concept2.jpg" height="170" width="250">-->
-
-    <!--<p>This zeep will give you highest speed.</p>-->
-    <!--</div>-->
-    <!--<div class="col-md-3">-->
-    <!--<h3 style="text-align: center">Bike</h3>-->
-    <!--<img src="../../../assets/images/mahindra-centuro.jpg" height="170" width="250">-->
-    <!--<p>Full featured authentication using JSON web tokens. Login and store user data</p>-->
-    <!--</div>-->
-
-    <!--<div class="col-md-2">-->
-    <!--<h3 style="text-align: center">Hybrid Cycle</h3>-->
-    <!--<img src="../../../assets/images/outrider1.jpg" height="170" width="250">-->
-    <!--<p>This is hybrid Cycle</p>-->
-    <!--</div>-->
-
-    <!--</div>-->
-
   </div>
 </div>

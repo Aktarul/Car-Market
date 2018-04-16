@@ -3,6 +3,8 @@ var config = require('./config');
 var app = express();
 var mongoose = require('mongoose');
 var cors = require('cors');
+let path= require('path');
+
 
 mongoose.connect(config.database,  (err) => {
     if(err) {
@@ -11,6 +13,9 @@ mongoose.connect(config.database,  (err) => {
         console.log('databse connected');
     }
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
