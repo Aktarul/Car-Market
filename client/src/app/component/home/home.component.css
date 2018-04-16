@@ -1,5 +1,10 @@
+.background {
+  background-image: url(home-bg2.jpg);
+}
 
-
+.thumbnail {
+  background-color: rgba(240,230,170,0.3);
+}
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -19,16 +24,18 @@
 }
 
 .thumbnail img {
-  height: 160px;
-  width: 300px;
+  height: 220px;
+  width: 400px;
 
 }
 
 .thumbnail .description {
-  color: #7f7f7f;
+  color: #003333;
+  font-size: 130%;
+  text-align: center;
 }
 
 .price {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
 }

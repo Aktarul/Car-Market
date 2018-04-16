@@ -9,35 +9,35 @@
 
           <li><a href="/home">Home</a></li>
 
-          <li class="parent">
-            <a href="/register">Register</a>
-            <ul class="sub-menu">
-              <li><a href="#"><i class="icon-wrench"></i> Elements</a></li>
-              <li><a href="#"><i class="icon-credit-card"></i>  Pricing Tables</a></li>
-              <li><a href="#"><i class="icon-gift"></i> Icons</a></li>
-              <li>
-                <a class="parent" href="#"><i class="icon-file-alt"></i> Pages</a>
-                <ul class="sub-menu">
-                  <li><a href="#">Full Width</a></li>
-                  <li><a href="#">Left Sidebar</a></li>
-                  <li><a href="#">Right Sidebar</a></li>
-                  <li><a href="#">Double Sidebar</a></li>
-                </ul>
-              </li>
-            </ul>
+          <!--<li class="parent">-->
+            <!--<a href="/register">Register</a>-->
+            <!--<ul class="sub-menu">-->
+              <!--<li><a href="#"><i class="icon-wrench"></i> Elements</a></li>-->
+              <!--<li><a href="#"><i class="icon-credit-card"></i>  Pricing Tables</a></li>-->
+              <!--<li><a href="#"><i class="icon-gift"></i> Icons</a></li>-->
+              <!--<li>-->
+                <!--<a class="parent" href="#"><i class="icon-file-alt"></i> Pages</a>-->
+                <!--<ul class="sub-menu">-->
+                  <!--<li><a href="#">Full Width</a></li>-->
+                  <!--<li><a href="#">Left Sidebar</a></li>-->
+                  <!--<li><a href="#">Right Sidebar</a></li>-->
+                  <!--<li><a href="#">Double Sidebar</a></li>-->
+                <!--</ul>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+
+          <!--<li><a href="/login">login</a></li>-->
+
+          <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+            <a [routerLink]="['/register']">Register</a>
+          </li>
+          <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+            <a [routerLink]="['/login']"> Login</a>
           </li>
 
-          <li><a href="/login">login</a></li>
-
-          <li class="parent">
-            <a href="/product">Add Product</a>
-            <ul class="sub-menu">
-              <li><a href="#">Large Image</a></li>
-              <li><a href="#">Medium Image</a></li>
-              <li><a href="#">Masonry</a></li>
-              <li><a href="#">Double Sidebar</a></li>
-              <li><a href="#">Single Post</a></li>
-            </ul>
+          <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+            <a [routerLink]="['/product']"> Add Product</a>
           </li>
 
           <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
@@ -46,7 +46,14 @@
             </a>
           </li>
 
-          <li><a href="#">Contact</a></li>
+
+          <li class="parent">
+            <a href="#">User Info</a>
+            <ul class="sub-menu"  *ngIf="authService.loggedIn()">
+              <li><a href="/profile">Profile</a></li>
+              <li><a (click)="onLogoutClick()" href="#">Logout</a></li>
+            </ul>
+          </li>
 
         </ul>
       </nav>

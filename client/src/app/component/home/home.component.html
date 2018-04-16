@@ -1,40 +1,4 @@
-
-
-
-<!--<div *ngIf="products" class="row">-->
-  <!--<div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">-->
-
-    <!--<h3 style="text-align: center">{{product.name}}</h3>-->
-
-    <!--<div  class="thumbnail">-->
-      <!--<h3 style="float: left">{{product.code}}</h3>-->
-
-      <!--<button style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-danger btn-sm">-->
-        <!--<span class="glyphicon glyphicon-trash"></span> Trash-->
-      <!--</button>-->
-
-      <!--<button style="float: right;margin-top: 18px;margin-right: 15px;" type="button" class="btn btn-primary btn-sm">-->
-        <!--<span class="glyphicon glyphicon-edit"></span> Edit-->
-      <!--</button>-->
-
-
-      <!--&lt;!&ndash;<h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>&ndash;&gt;-->
-
-      <!--<img *ngIf="product.picture" src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">-->
-      <!--<div class="caption">-->
-        <!--<p class="description">{{ product.description }}</p>-->
-        <!--<div class="clearfix">-->
-          <!--<div class="price pull-left">${{ product.price }}</div>-->
-
-
-          <!--<a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
-
+<div class="background">
 <div *ngIf="products" class="row">
   <div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">
 
@@ -50,18 +14,21 @@
       </button>
 
 
-      <h3 (click)="detailsView(product._id)" style="color: deepskyblue;text-align: center">{{product.name}}</h3>
+      <h3 (click)="detailsView(product._id)" style="color: #26734d;text-align: center">{{product.name}}</h3>
 
       <img (click)="detailsView(product._id)" src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">
       <div class="caption">
-        <p class="description">{{ product.description }}</p>
         <div class="clearfix">
-          <div class="price pull-left">${{ product.price }}</div>
+          <div class="price pull-left">{{ product.price }} ৳</div>
 
 
-          <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+          <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+          <p class="description">{{ product.description }}</p>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

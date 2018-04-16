@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
 
   delFunc(product) {
     this.products.splice(this.products.indexOf(product), 1);
-    this.productService.deleteProduct(product._id).subscribe(respnse => {
+    this.productService.deleteProduct(product._id).subscribe(response => {
     });
   }
 

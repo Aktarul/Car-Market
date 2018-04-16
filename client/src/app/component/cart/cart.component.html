@@ -24,8 +24,8 @@
             <img src="http://localhost:3000/{{product.myProduct.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
           </td>
           <td style="text-align: center">{{product.myProductCount}}</td>
-          <td style="text-align: center">${{product.myProduct.price}}</td>
-          <td style="text-align: center">${{product.myProduct.price*product.myProductCount}}</td>
+          <td style="text-align: center">{{product.myProduct.price}} ৳</td>
+          <td style="text-align: center">{{product.myProduct.price*product.myProductCount}} ৳</td>
 
           <td>
           <ul class="nav nav-pills nav-stacked">
@@ -54,7 +54,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><h4 style="margin-bottom: 2%">Total = ${{sum}}</h4></td>
+        <td><h4 style="margin-bottom: 2%">Total = {{sum}} ৳</h4></td>
 
         <td></td>
 
