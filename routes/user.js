@@ -4,9 +4,9 @@ var userController = require('../controller/user');
 var authController = require('../controller/auth');
 
 router.post('/', userController.createUser);
-router.get('/', authController.adminAuthenticate, userController.getAllUser);
+router.get('/', userController.getAllUser);
 router.get('/:id',  userController.getUser);
-router.delete('/:id', authController.adminAuthenticate, userController.deleteUser);
+router.delete('/:id', userController.deleteUser);
 router.patch('/:id', userController.updateUser);
 
 module.exports = router;

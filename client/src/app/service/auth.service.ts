@@ -67,12 +67,15 @@ export class AuthService {
 
     // console.log('Token '+this.authToken);
 
-    headers.append('authorization', this.authToken);
+    // headers.append('authorization', this.authToken);
 
-    headers.append('Content-Type', 'application/json');
-
-    return this.http.get('http://localhost:3000/user',{ headers: headers})
-      .map( res => res.json());
+    // headers.append('Content-Type', 'application/json');
+    console.log('Getting profile');
+    return this.http.get('http://localhost:3000/user')
+      .map( res => {
+        console.log(res);
+        return res.json();
+      });
   }
 
 

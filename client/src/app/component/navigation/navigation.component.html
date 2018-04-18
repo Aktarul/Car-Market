@@ -46,14 +46,21 @@
             </a>
           </li>
 
-
-          <li class="parent">
-            <a href="#">User Info</a>
-            <ul class="sub-menu"  *ngIf="authService.loggedIn()">
-              <li><a href="/profile">Profile</a></li>
-              <li><a (click)="onLogoutClick()" href="#">Logout</a></li>
-            </ul>
+          <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+            <a [routerLink]="['/profile']"> Profile </a>
           </li>
+
+          <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
+            <a  (click)="onLogoutClick()"  [routerLink]="['/home']"> Logout</a>
+          </li>
+
+          <!--<li class="parent">-->
+            <!--<a href="#">User Info</a>-->
+            <!--<ul class="sub-menu"  *ngIf="authService.loggedIn()">-->
+              <!--<li><a href="/profile">Profile</a></li>-->
+              <!--<li><a (click)="onLogoutClick()" href="#">Logout</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
 
         </ul>
       </nav>

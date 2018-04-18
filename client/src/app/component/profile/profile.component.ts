@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
+import {User} from "../../model/user";
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +12,7 @@ export class ProfileComponent implements OnInit {
 
   users: any;
   singleUser: any;
+  currentUser: User;
 
 
   constructor(private authService: AuthService, private router: Router) {
@@ -19,21 +21,22 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(response => {
-      this.users = response.data;
-       console.log('user data:' + this.users);
-    });
-
-     // console.log('Here ' + localStorage.getItem('loginId'));
-
-    // console.log('hello world kaj kor');
-
-    this.authService.getSiingleProfile(localStorage.getItem('loginId'))
-      .subscribe(response => {
-        this.singleUser = JSON.parse(JSON.stringify(response.data));
-        console.log('user:');
-        console.log( this.singleUser);
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(this.currentUser);
+    if (this.currentUser.isAdmin) {
+      this.authService.getProfile().subscribe(response => {
+        this.users = response.data;
+        console.log('user data:');
+        console.log(this.users);
       });
+    } else {
+      this.authService.getSiingleProfile(localStorage.getItem('loginId'))
+        .subscribe(response => {
+          this.singleUser = JSON.parse(JSON.stringify(response.data));
+          console.log('user:');
+          console.log( this.singleUser);
+        });
+    }
   }
 
   editProfile(id) {

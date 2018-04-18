@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    if( this.password === undefined ){
+    if(typeof this.password == 'undefined'){
       this._flashMessagesService.show('Please enter Password!', { cssClass: 'alert-danger'});
       return;
     }
@@ -46,15 +46,14 @@ export class LoginComponent implements OnInit {
     this.authService.authenticateUser(user)
       .subscribe(res => {
 
-        // console.log(user.email);
-
         if (res.success) {
 
           localStorage.setItem('loginId', res.data._id);
-          // console.log(res.data._id);
+
+          console.log(res.data._id);
           // console.log('isAdmin: ' + res.data.isAdmin);
           // console.log(res.token);
-
+          localStorage.setItem('currentUser', JSON.stringify(res.data));
           localStorage.setItem('isAdmin', JSON.parse(res.data.isAdmin));
           this.authService.storeUserData(res.token, res.data);
 

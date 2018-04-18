@@ -1,6 +1,6 @@
 <div class="bg">
 <div class="panel panel-primary" style="width: 100%; margin: 0%">
-  <div  style="text-align: center; font-size: 200%; background-color: rgba(120,120,120,0.3);">Admin Panel</div>
+  <div  style="text-align: center; font-size: 200%; background-color: rgba(120,120,120,0.3);">Registered Users</div>
   <div class="panel-body">
 
 
@@ -30,7 +30,7 @@
         <td style="text-align: center">{{user.name}}</td>
         <td style="text-align: center">{{user.email}}</td>
         <td style="text-align: center">{{user.username}}</td>
-        <td style="text-align: center"><a (click)="deleteProfile(user)" class="btn btn-danger a-btn-slide-text">
+        <td *ngIf="user.isAdmin==false" style="text-align: center"><a (click)="deleteProfile(user)" class="btn btn-danger a-btn-slide-text">
           <span><strong>Delete</strong></span>
         </a></td>
 
@@ -44,7 +44,7 @@
         <td style="text-align: center">{{singleUser.name}}</td>
         <td style="text-align: center">{{singleUser.email}}</td>
         <td style="text-align: center">{{singleUser.username}}</td>
-        <td style="text-align: center"><a (click)="editProfile(singleUser._id)" class="btn btn-info a-btn-slide-text">
+        <td  style="text-align: center"><a (click)="editProfile(singleUser._id)" class="btn btn-info a-btn-slide-text">
           <span><strong>Edit</strong></span>
         </a></td>
       </tr>

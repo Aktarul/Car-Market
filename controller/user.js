@@ -26,25 +26,10 @@ var createUser = (req, res, next) => {
                 'message': 'user created'
             })
         });
-
-        // myUser.save((err, user) => {
-        //     if(err) {
-        //         return res.status(404).json({
-        //             message: err,
-        //             success: false
-        //         });
-        //     }
-        //     else {
-        //         return res.status(200).json({
-        //             success: true,
-        //             data: user
-        //         });
-        //     }
-        // });
 };
 
-
 var getUser = (req, res, next) => {
+    console.log('getting single user');
     User.findById(req.params.id, (err, user) => {
         if(err){
             return res.status(404).json({
@@ -62,6 +47,7 @@ var getUser = (req, res, next) => {
 }
 
 var getAllUser = (req, res, next) => {
+    console.log('Getting all users');
     User.find( (err, User) => {
         if(err){
             return res.status(404).json({
