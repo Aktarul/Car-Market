@@ -39,7 +39,7 @@ export class ProductService {
     return localStorage.getItem('cnt');
   }
 
-  getSingleProduct(id){
+  getSingleProduct(id) {
 
     const headers = new Headers();
 
@@ -95,9 +95,6 @@ export class ProductService {
       this.myProductArray = [];
     }
 
-    //
-    // console.log('type of  cnt2: ' + typeof cnt2 + ' and val: ' + cnt2);
-    // console.log('type of  paramcnt: ' + typeof paramcnt + ' and val: ' + paramcnt);
     if (cnt2 == null) {
       // console.log('cnt2 is null.');
       cnt2 = '0';

@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import {ProductService} from '../../service/product.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 const uri = 'http://localhost:3000/product';
@@ -35,6 +35,7 @@ export class PhotoUploadComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
+    private router: Router
 
   ) {
     const id = this.route.snapshot.paramMap.get('id');

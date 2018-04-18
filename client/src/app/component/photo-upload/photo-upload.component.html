@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-      <div class="row card"><br><br>
+      <div class="row card">
         <div class="col-sm-12">
           <div id="fileSelector">
             <input type="file" name="fileUplaod" id="fileUpload"
@@ -24,6 +24,7 @@
                        [ngStyle]="{'width':item.progress+'%'}"></div>
                 </div>
               </div>
+
               <div class="col-sm-4">
                 <button type="button" class="btn btn-dark" (click)="item.upload()">Upload</button>
                 <button type="button" class="btn btn-danger" (click)="item.remove()">Cancel</button>
@@ -33,9 +34,13 @@
           <!--<div class="row" *ngIf="uploader?.queue?.length > 0">-->
             <!--<button type="button" class="btn btn-primary" (click)="uploader.uploadAll()">Upload All</button>-->
           <!--</div>-->
-        </div>
+        </div> <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary"    [routerLink]="['/home']" >
+          <span class="fa fa-shopping-cart"></span>
+          <a style = "color: black;">Continue Shopping</a>
+        </button><br>
       </div>
-
     </div>
     <div class="col-md-2"></div>
   </div>

@@ -3,82 +3,80 @@
   <div class="panel-body">
 
 
-      <table  class="table">
-        <thead>
-        <tr>
-          <th style="text-align: center">Product Name</th>
-          <th style="text-align: center">Product Image</th>
-          <th style="text-align: center">Product Quantity</th>
-          <th style="text-align: center">Product Price</th>
-          <th style="text-align: center">Total Product Price</th>
-          <th>Action</th>
-        </tr>
-        </thead>
-        <tbody *ngFor="let product of myProductArray; let i = index">
+    <table  class="table">
+      <thead>
+      <tr>
+        <th style="text-align: center">Product Name</th>
+        <th style="text-align: center">Product Image</th>
+        <th style="text-align: center">Product Quantity</th>
+        <th style="text-align: center">Product Price</th>
+        <th style="text-align: center">Total Product Price</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let product of myProductArray; let i = index">
 
 
-        <tr class="success" *ngIf="product.myProductCount">
-          <td style="text-align: center">{{product.myProduct.name}}</td>
+      <tr class="success" *ngIf="product.myProductCount">
+        <td style="text-align: center">{{product.myProduct.name}}</td>
 
-          <td style="text-align: center">
-            <img src="http://localhost:3000/{{product.myProduct.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
-          </td>
-          <td style="text-align: center">{{product.myProductCount}}</td>
-          <td style="text-align: center">{{product.myProduct.price}} ৳</td>
-          <td style="text-align: center">{{product.myProduct.price*product.myProductCount}} ৳</td>
+        <td style="text-align: center">
+          <img src="http://localhost:3000/{{product.myProduct.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
+        </td>
+        <td style="text-align: center">{{product.myProductCount}}</td>
+        <td style="text-align: center">{{product.myProduct.price}} ৳</td>
+        <td style="text-align: center">{{product.myProduct.price*product.myProductCount}} ৳</td>
 
-          <td>
+        <td>
           <ul class="nav nav-pills nav-stacked">
 
             <li class="dropdown">
               <button (click)="removeAll(product.myProduct.name)" class="dropdown-toggle" class="btn btn-danger" data-toggle="dropdown"><span class="glyphicon glyphicon-remove"></span> Remove</button>
               <!--<ul class="dropdown-menu">-->
-                <!--<li (click)="reduceByOne(product.myProduct.name)"><a >Remove 1</a></li>-->
-                <!--<li (click)="removeAll(product.myProduct.name)"><a >Remove all</a></li>-->
+              <!--<li (click)="reduceByOne(product.myProduct.name)"><a >Remove 1</a></li>-->
+              <!--<li (click)="removeAll(product.myProduct.name)"><a >Remove all</a></li>-->
               <!--</ul>-->
             </li>
           </ul>
-          </td>
+        </td>
+      </tr>
 
 
 
-        </tr>
+      </tbody>
+      <div *ngIf="!myProductArray" class="alert alert-warning">
+        <strong>Warning!</strong> You have not added any cart to Buy.
+      </div>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><h4 style="margin-bottom: 2%">Total = {{sum}} ৳</h4></td>
+
+      <td></td>
 
 
 
-        </tbody>
-        <div *ngIf="!myProductArray" class="alert alert-warning">
-          <strong>Warning!</strong> You have not added any cart to Buy.
-        </div>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-default"    [routerLink]="['/home']" >
+            <span class="fa fa-shopping-cart"></span>
+            <a style = "text-decoration: none">Continue Shopping</a>
+          </button>
+        </td>
+
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td><h4 style="margin-bottom: 2%">Total = {{sum}} ৳</h4></td>
 
         <td></td>
+        <td>
+          <button (click)="payment()" type="button" class="btn btn-success" >
+            Checkout <span class="glyphicon glyphicon-play"></span>
+          </button></td>
 
-
-
-        <tr>
-
-          <td>
-            <button type="button" class="btn btn-default"  >
-              <span class="glyphicon glyphicon-shopping-cart"></span> <a [routerLink]="['/']" style="text-decoration: none">Continue Shopping</a>
-            </button></td>
-
-          <td></td>
-          <td></td>
-          <td></td>
-
-          <td></td>
-          <td>
-            <button (click)="payment()" type="button" class="btn btn-success" >
-              Checkout <span class="glyphicon glyphicon-play"></span>
-            </button></td>
-
-        </tr>
-      </table>
+      </tr>
+    </table>
 
   </div>
 </div>
