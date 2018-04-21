@@ -11,17 +11,17 @@ Car Market is an E-Commerce web application where users can visit, see and buy b
 ## Installation
   1. Clone this repositry : `git clone https://github.com/Aktarul/Car-Market.git`
   2. Open a terminal in this directory
-  2. Install dependencies : `npm install --save`
-  3. Run server : `node server.js`
+  3. Install dependencies : `npm install --save`
+  4. Run server : `node server.js`
  
  Do not forget to start your database before running server.
   
 **Open another terminal in the directory**
 
-  4. Navigate to client directory : `cd client`
-  5. Install dependencies : `npm install --save`
-  6. Run client : `ng serve`
-  7. Visit: `localhost:4200/home`
+  5. Navigate to client directory : `cd client`
+  6. Install dependencies : `npm install --save`
+  7. Run client : `ng serve`
+  8. Visit: `localhost:4200/home`
 
 ## Usage
 After completing installation create at least one Admin. Here are the steps,
