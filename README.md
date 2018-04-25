@@ -1,12 +1,21 @@
 # Car Market
 
-Car Market is an E-Commerce web application where users can visit, see and buy beautiful cars. This application is created to implement shopping cart. It is a MEAN stack application.
+Car Market is an E-Commerce web application where users can visit, see and buy beautiful cars. This application is created to implement shopping cart. It is a [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) application.
 
 ## Technologies
   1. Frontend: **Angular**
-  2. Backend: **Node.js**
+  2. Runtime Environment: **Node.js**
   3. Backend Framework: **Express.js**
   4. Database: **MongoDB**
+  
+**Other technologies and tools**
+  1. Frontend Scaffolding: **Angular CLI**
+  2. Style and Layout: **Bootstrap**
+  3. Login and Authentication: **Angular 2 JWT**
+  4. Showing Messages: **Angular 2 Flash Messages**
+  5. Admin and User Authentication: **JSON Web Token**
+  6. Password Encryption: **Bcrypt.js**
+  7. File Upload: **Multer**
 
 ## Installation
   1. Clone this repositry : `git clone https://github.com/Aktarul/Car-Market.git`
