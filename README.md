@@ -31,5 +31,20 @@ After completing installation create at least one Admin. Here are the steps,
 
 Thus we will get an Admin. Now we can add, update, delete any product and also manage users from Admin account. Now register some users, add some products and visit home page.
 
+## UI-Design with Angular
+
+#### _Homepage_
+![Screenshot-1](Screenshots/home.png)
+
+#### _Cart_
+![Screenshot-2](Screenshots/cart.png)
+
+#### _Admin Panel_
+![Screenshot-3](Screenshots/admin.png)
+
+#### _Register and Login_
+![Screenshot-4](Screenshots/register.png) . . . ![Screenshot-5](Screenshots/login.png)
+
+
 ## Licence
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
