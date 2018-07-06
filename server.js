@@ -32,7 +32,7 @@ var authRoute = require('./routes/auth');
 app.use('/auth', authRoute);
 
 app.use('*', (req, res, next) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
 
