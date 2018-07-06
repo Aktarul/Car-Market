@@ -31,6 +31,10 @@ app.use('/user', userRoute);
 var authRoute = require('./routes/auth');
 app.use('/auth', authRoute);
 
+app.use('*', (req, res, next) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 
 app.listen(process.env.PORT || 8080, err => {
     if(err) {
