@@ -19,7 +19,8 @@ export class ProductService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.post('http://localhost:3000/product', JSON.stringify(product), { headers: headers })
+    return this.http.post('product', JSON.stringify(product), { headers: headers })
+    // return this.http.post('http://localhost:3000/product', JSON.stringify(product), { headers: headers })
       .map(res => res.json());
 
   }
@@ -30,7 +31,8 @@ export class ProductService {
 
     headers.append('Content-type', 'application/json');
 
-    return this.http.get('http://localhost:3000/product', { headers: headers})
+    return this.http.get('product', { headers: headers})
+    // return this.http.get('http://localhost:3000/product', { headers: headers})
       .map(res => res.json());
 
   }
@@ -45,7 +47,8 @@ export class ProductService {
 
     headers.append('Content-type', 'application/json');
 
-    return this.http.get(`http://localhost:3000/product/${id}`,{headers: headers})
+    return this.http.get(`product/${id}`,{headers: headers})
+    // return this.http.get(`http://localhost:3000/product/${id}`,{headers: headers})
       .map(res => res.json());
 
   }
@@ -62,7 +65,8 @@ export class ProductService {
 
     headers.append('Content-type', 'application/json');
 
-    return this.http.delete(`http://localhost:3000/product/${id}`,{headers: headers})
+    return this.http.delete(`product/${id}`,{headers: headers})
+    // return this.http.delete(`http://localhost:3000/product/${id}`,{headers: headers})
       .map(res => res.json());
 
   }
@@ -161,7 +165,8 @@ export class ProductService {
 
     headers.append('Content-type', 'application/json');
 
-    return this.http.patch(`http://localhost:3000/product/${id}`, product, { headers: headers })
+    return this.http.patch(`product/${id}`, product, { headers: headers })
+    // return this.http.patch(`http://localhost:3000/product/${id}`, product, { headers: headers })
       .map(res => res.json());
   }
 

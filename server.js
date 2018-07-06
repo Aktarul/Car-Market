@@ -32,7 +32,7 @@ var authRoute = require('./routes/auth');
 app.use('/auth', authRoute);
 
 
-app.listen(3000, err => {
+app.listen(process.env.PORT || 8080, err => {
     if(err) {
         console.log('error in listening port: 3000');
     } else {

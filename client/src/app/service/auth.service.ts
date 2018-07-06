@@ -17,7 +17,8 @@ export class AuthService {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
 
-    return this.http.post('http://localhost:3000/user', user, { headers: headers})
+    // return this.http.post('http://localhost:3000/user', user, { headers: headers})
+    return this.http.post('user', user, { headers: headers})
       .map(res => res.json());
   }
 
@@ -25,7 +26,8 @@ export class AuthService {
     const headers = new Headers();
     headers.append('Content-type', 'application/json');
 
-    return this.http.post('http://localhost:3000/auth/login', user,{headers: headers})
+    return this.http.post('auth/login', user,{headers: headers})
+    // return this.http.post('http://localhost:3000/auth/login', user,{headers: headers})
       .map(res => res.json());
   }
 
@@ -43,7 +45,8 @@ export class AuthService {
     this.loadToken();
 
     headers.append('Content-type', 'application/json');
-    return this.http.get(`http://localhost:3000/user/${loginId}` ,{headers:headers})
+    return this.http.get(`user/${loginId}` ,{headers:headers})
+    // return this.http.get(`http://localhost:3000/user/${loginId}` ,{headers:headers})
       .map( res => res.json());
 
   }
@@ -55,7 +58,8 @@ export class AuthService {
     console.log('In service upadte' + JSON.stringify(User));
 
     headers.append('Content-type', 'application/json');
-    return this.http.patch(`http://localhost:3000/user/${loginId}` , User, { headers: headers})
+    return this.http.patch(`user/${loginId}` , User, { headers: headers})
+    // return this.http.patch(`http://localhost:3000/user/${loginId}` , User, { headers: headers})
       .map( res => res.json());
 
   }
@@ -71,7 +75,8 @@ export class AuthService {
 
     // headers.append('Content-Type', 'application/json');
     console.log('Getting profile');
-    return this.http.get('http://localhost:3000/user')
+    return this.http.get('user')
+    // return this.http.get('http://localhost:3000/user')
       .map( res => {
         console.log(res);
         return res.json();
@@ -93,7 +98,8 @@ export class AuthService {
 
     headers.append('Content-Type', 'application/json');
 
-    return this.http.delete(`http://localhost:3000/user/${id}`,{headers:headers})
+    return this.http.delete(`user/${id}`,{headers:headers})
+    // return this.http.delete(`http://localhost:3000/user/${id}`,{headers:headers})
       .map( res => res.json());
   }
 
