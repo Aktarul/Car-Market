@@ -31,14 +31,14 @@ export class LoginComponent implements OnInit {
     const user  = {
       email: this.email,
       password: this.password
-    }
+    };
 
     if (!this.validate.validEmail(user.email)) {
       this._flashMessagesService.show('Email is not valid!', { cssClass: 'alert-danger'});
       return;
     }
 
-    if(typeof this.password == 'undefined'){
+    if (typeof this.password == 'undefined') {
       this._flashMessagesService.show('Please enter Password!', { cssClass: 'alert-danger'});
       return;
     }
