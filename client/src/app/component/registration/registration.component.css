@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
   background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/
-  background:url(logInBG.jpg);
+  background:url(../../../assets/images/logInBG.jpg);
   font-family: 'Oxygen', sans-serif;
   background-size: cover;
   padding: 50px 20px;

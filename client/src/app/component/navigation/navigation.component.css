@@ -70,7 +70,7 @@ ol, ul {
 }
 
 #main-menu > li.parent {
-  background-image: url(./images/plus-gray.png);
+  background-image: url(../../../assets/images/plus-gray.png);
   background-size: 7px 7px;
   background-repeat: no-repeat;
   background-position: left center;
@@ -144,7 +144,7 @@ ul.sub-menu > li:last-child > a {
 }
 
 ul.sub-menu > li > a.parent {
-  background-image: url(./images/arrow.png);
+  background-image: url(../../../assets/images/arrow.png);
   background-size: 5px 9px;
   background-repeat: no-repeat;
   background-position: 95% center;

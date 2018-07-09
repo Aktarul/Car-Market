@@ -16,8 +16,9 @@ export class NavigationComponent implements OnInit {
               public authService: AuthService,
               private router: Router,
               private flashMessage: FlashMessagesService) {
-    if(localStorage.getItem('isAdmin') == 'true')
+    if (localStorage.getItem('isAdmin') == 'true') {
       this.isAdmin = 1;
+    }
     console.log(this.isAdmin);
   }
 

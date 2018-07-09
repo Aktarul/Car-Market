@@ -10,7 +10,8 @@ import {ProductService} from '../../service/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 
-const uri = 'http://localhost:3000/product';
+const uri = 'product';
+// const uri = 'http://localhost:3000/product';
 
 let ur2;
 
@@ -39,7 +40,8 @@ export class PhotoUploadComponent implements OnInit {
 
   ) {
     const id = this.route.snapshot.paramMap.get('id');
-    ur2 = `http://localhost:3000/product/${id}`;
+    ur2 = `product/${id}`;
+    // ur2 = `http://localhost:3000/product/${id}`;
     console.log('Here ' + id + ' there');
     console.log(ur2);
     this.product = [];

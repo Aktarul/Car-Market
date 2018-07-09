@@ -42,7 +42,7 @@
 
           <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" >
             <a [routerLink]="['/cart']"><i class="glyphicon glyphicon-shopping-cart"></i>
-            <span class="badge">{{ productService.getProductCartSize() || cart }}</span>
+            <span class="badge">{{ productService.getProductCartSize()}}</span>
             </a>
           </li>
 

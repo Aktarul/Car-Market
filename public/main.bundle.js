@@ -219,7 +219,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/component/cart/cart.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-primary\" style=\"width: 100%; margin: 0%\">\r\n  <div class=\"panel-heading\" style=\"text-align: center; font-size: 200%; background-color: rgba(120,120,120,0.3); color: black;\">Cart Checkout</div>\r\n  <div class=\"panel-body\">\r\n\r\n\r\n    <table  class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th style=\"text-align: center\">Product Name</th>\r\n        <th style=\"text-align: center\">Product Image</th>\r\n        <th style=\"text-align: center\">Product Quantity</th>\r\n        <th style=\"text-align: center\">Product Price</th>\r\n        <th style=\"text-align: center\">Total Product Price</th>\r\n        <th>Action</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody *ngFor=\"let product of myProductArray; let i = index\">\r\n\r\n\r\n      <tr class=\"success\" *ngIf=\"product.myProductCount\">\r\n        <td style=\"text-align: center\">{{product.myProduct.name}}</td>\r\n\r\n        <td style=\"text-align: center\">\r\n          <img src=\"http://localhost:3000/{{product.myProduct.picture}}\" alt=\"...\" class=\"img-responsive\" height=\"50px\" width=\"80px\">\r\n        </td>\r\n        <td style=\"text-align: center\">{{product.myProductCount}}</td>\r\n        <td style=\"text-align: center\">{{product.myProduct.price}} ৳</td>\r\n        <td style=\"text-align: center\">{{product.myProduct.price*product.myProductCount}} ৳</td>\r\n\r\n        <td>\r\n          <ul class=\"nav nav-pills nav-stacked\">\r\n\r\n            <li class=\"dropdown\">\r\n              <button (click)=\"removeAll(product.myProduct.name)\" class=\"dropdown-toggle\" class=\"btn btn-danger\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-remove\"></span> Remove</button>\r\n              <!--<ul class=\"dropdown-menu\">-->\r\n              <!--<li (click)=\"reduceByOne(product.myProduct.name)\"><a >Remove 1</a></li>-->\r\n              <!--<li (click)=\"removeAll(product.myProduct.name)\"><a >Remove all</a></li>-->\r\n              <!--</ul>-->\r\n            </li>\r\n          </ul>\r\n        </td>\r\n      </tr>\r\n\r\n\r\n\r\n      </tbody>\r\n      <div *ngIf=\"!myProductArray\" class=\"alert alert-warning\">\r\n        <strong>Warning!</strong> You have not added any cart to Buy.\r\n      </div>\r\n      <td></td>\r\n      <td></td>\r\n      <td></td>\r\n      <td></td>\r\n      <td><h4 style=\"margin-bottom: 2%\">Total = {{sum}} ৳</h4></td>\r\n\r\n      <td></td>\r\n\r\n\r\n\r\n      <tr>\r\n        <td>\r\n          <button type=\"button\" class=\"btn btn-default\"    [routerLink]=\"['/home']\" >\r\n            <span class=\"fa fa-shopping-cart\"></span>\r\n            <a style = \"text-decoration: none\">Continue Shopping</a>\r\n          </button>\r\n        </td>\r\n\r\n        <td></td>\r\n        <td></td>\r\n        <td></td>\r\n\r\n        <td></td>\r\n        <td>\r\n          <button (click)=\"payment()\" type=\"button\" class=\"btn btn-success\" >\r\n            Checkout <span class=\"glyphicon glyphicon-play\"></span>\r\n          </button></td>\r\n\r\n      </tr>\r\n    </table>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"panel panel-primary\" style=\"width: 100%; margin: 0%\">\r\n  <div class=\"panel-heading\" style=\"text-align: center; font-size: 200%; background-color: rgba(120,120,120,0.3); color: black;\">Cart Checkout</div>\r\n  <div class=\"panel-body\">\r\n\r\n\r\n    <table  class=\"table\">\r\n      <thead>\r\n      <tr>\r\n        <th style=\"text-align: center\">Product Name</th>\r\n        <th style=\"text-align: center\">Product Image</th>\r\n        <th style=\"text-align: center\">Product Quantity</th>\r\n        <th style=\"text-align: center\">Product Price</th>\r\n        <th style=\"text-align: center\">Total Product Price</th>\r\n        <th>Action</th>\r\n      </tr>\r\n      </thead>\r\n      <tbody *ngFor=\"let product of myProductArray; let i = index\">\r\n\r\n\r\n      <tr class=\"success\" *ngIf=\"product.myProductCount\">\r\n        <td style=\"text-align: center\">{{product.myProduct.name}}</td>\r\n\r\n        <td style=\"text-align: center\">\r\n          <img src=\"upload/{{product.myProduct.picture}}\" alt=\"...\" class=\"img-responsive\" height=\"50px\" width=\"80px\">\r\n          <!--<img src=\"http://localhost:3000/{{product.myProduct.picture}}\" alt=\"...\" class=\"img-responsive\" height=\"50px\" width=\"80px\">-->\r\n        </td>\r\n        <td style=\"text-align: center\">{{product.myProductCount}}</td>\r\n        <td style=\"text-align: center\">{{product.myProduct.price}} ৳</td>\r\n        <td style=\"text-align: center\">{{product.myProduct.price*product.myProductCount}} ৳</td>\r\n\r\n        <td>\r\n          <ul class=\"nav nav-pills nav-stacked\">\r\n\r\n            <li class=\"dropdown\">\r\n              <button (click)=\"removeAll(product.myProduct.name)\" class=\"dropdown-toggle\" class=\"btn btn-danger\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-remove\"></span> Remove</button>\r\n              <!--<ul class=\"dropdown-menu\">-->\r\n              <!--<li (click)=\"reduceByOne(product.myProduct.name)\"><a >Remove 1</a></li>-->\r\n              <!--<li (click)=\"removeAll(product.myProduct.name)\"><a >Remove all</a></li>-->\r\n              <!--</ul>-->\r\n            </li>\r\n          </ul>\r\n        </td>\r\n      </tr>\r\n\r\n\r\n\r\n      </tbody>\r\n      <div *ngIf=\"!myProductArray\" class=\"alert alert-warning\">\r\n        <strong>Warning!</strong> You have not added any cart to Buy.\r\n      </div>\r\n      <td></td>\r\n      <td></td>\r\n      <td></td>\r\n      <td></td>\r\n      <td><h4 style=\"margin-bottom: 2%\">Total = {{sum}} ৳</h4></td>\r\n\r\n      <td></td>\r\n\r\n\r\n\r\n      <tr>\r\n        <td>\r\n          <button type=\"button\" class=\"btn btn-default\"    [routerLink]=\"['/home']\" >\r\n            <span class=\"fa fa-shopping-cart\"></span>\r\n            <a style = \"text-decoration: none\">Continue Shopping</a>\r\n          </button>\r\n        </td>\r\n\r\n        <td></td>\r\n        <td></td>\r\n        <td></td>\r\n\r\n        <td></td>\r\n        <td>\r\n          <button (click)=\"payment()\" type=\"button\" class=\"btn btn-success\" >\r\n            Checkout <span class=\"glyphicon glyphicon-play\"></span>\r\n          </button></td>\r\n\r\n      </tr>\r\n    </table>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -355,7 +355,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/app/component/editprofile/most-bg.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(133, 150, 150,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/assets/images/most-bg.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(133, 150, 150,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -459,13 +459,6 @@ var EditProfileComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/component/editprofile/most-bg.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "most-bg.94de0fec8f34d6262145.jpg";
-
-/***/ }),
-
 /***/ "../../../../../src/app/component/footer/footer.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -527,13 +520,6 @@ var FooterComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/component/home/home-bg2.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "home-bg2.94ec6f3233b3f8a57ad7.jpg";
-
-/***/ }),
-
 /***/ "../../../../../src/app/component/home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -543,7 +529,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".background {\r\n  background-image: url(" + escape(__webpack_require__("../../../../../src/app/component/home/home-bg2.jpg")) + ");\r\n}\r\n\r\n.thumbnail {\r\n  background-color: rgba(240,230,160,0.35);\r\n}\r\n\r\n.card {\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  width: 300px;\r\n  margin-left: 40px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 12px;\r\n  overflow-x: hidden;\r\n\r\n}\r\n\r\n.thumbnail img {\r\n  height: 220px;\r\n  width: 400px;\r\n\r\n}\r\n\r\n.thumbnail .description {\r\n  color: #003333;\r\n  font-size: 130%;\r\n  text-align: center;\r\n}\r\n\r\n.price {\r\n  font-weight: bold;\r\n  font-size: 20px;\r\n}\r\n", ""]);
+exports.push([module.i, ".background {\r\n  background-image: url(" + escape(__webpack_require__("../../../../../src/assets/images/home-bg2.jpg")) + ");\r\n}\r\n\r\n.thumbnail {\r\n  background-color: rgba(240,230,160,0.35);\r\n}\r\n\r\n.card {\r\n  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  width: 300px;\r\n  margin-left: 40px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.card:hover {\r\n  -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.container {\r\n  padding: 2px 12px;\r\n  overflow-x: hidden;\r\n\r\n}\r\n\r\n.thumbnail img {\r\n  height: 220px;\r\n  width: 400px;\r\n\r\n}\r\n\r\n.thumbnail .description {\r\n  color: #003333;\r\n  font-size: 130%;\r\n  text-align: center;\r\n}\r\n\r\n.price {\r\n  font-weight: bold;\r\n  font-size: 20px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -556,7 +542,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/component/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"background\">\r\n<div *ngIf=\"products\" class=\"row\">\r\n  <div *ngFor=\"let product of products;let i = index\" class=\"col-sm-6 col-md-4\">\r\n\r\n    <div  class=\"thumbnail\">\r\n      <h3 style=\"float: left\">{{product.code}}</h3>\r\n\r\n\r\n      <h3 (click)=\"detailsView(product._id)\" style=\"color: #26734d;text-align: center\">{{product.name}}</h3>\r\n\r\n      <img (click)=\"detailsView(product._id)\" src=\"http://localhost:3000/{{product.picture}}\" alt=\"...\" class=\"img-responsive\">\r\n      <div class=\"caption\">\r\n        <div class=\"clearfix\">\r\n          <div class=\"price pull-left\">{{ product.price }} ৳</div>\r\n\r\n\r\n          <a (click)=\"cart(1,product._id,product)\" class=\"btn btn-success pull-right\" role=\"button\">\r\n            <i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>\r\n          </a>\r\n          <p class=\"description\">{{ product.description }}</p>\r\n\r\n          <button (click)=\"delFunc(product)\" *ngIf=\"isAdmin\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-danger btn-lg\">\r\n            Trash<br>\r\n          </button>\r\n\r\n          <button *ngIf=\"isAdmin\" (click)=\"editProduct(product._id)\" style=\"float: left;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-primary btn-lg\">\r\n            Edit\r\n          </button>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n</div>\r\n"
+module.exports = "<div class=\"background\">\r\n<div *ngIf=\"products\" class=\"row\">\r\n  <div *ngFor=\"let product of products;let i = index\" class=\"col-sm-6 col-md-4\">\r\n\r\n    <div  class=\"thumbnail\">\r\n      <h3 style=\"float: left\">{{product.code}}</h3>\r\n\r\n\r\n      <h3 (click)=\"detailsView(product._id)\" style=\"color: #26734d;text-align: center\">{{product.name}}</h3>\r\n\r\n      <img (click)=\"detailsView(product._id)\" src=\"upload/{{product.picture}}\" alt=\"...\" class=\"img-responsive\">\r\n      <!--<img (click)=\"detailsView(product._id)\" src=\"http://localhost:3000/{{product.picture}}\" alt=\"...\" class=\"img-responsive\">-->\r\n      <div class=\"caption\">\r\n        <div class=\"clearfix\">\r\n          <div class=\"price pull-left\">{{ product.price }} ৳</div>\r\n\r\n\r\n          <a (click)=\"cart(1,product._id,product)\" class=\"btn btn-success pull-right\" role=\"button\">\r\n            <i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>\r\n          </a>\r\n          <p class=\"description\">{{ product.description }}</p>\r\n\r\n          <button (click)=\"delFunc(product)\" *ngIf=\"isAdmin\" style=\"float: right;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-danger btn-lg\">\r\n            Trash<br>\r\n          </button>\r\n\r\n          <button *ngIf=\"isAdmin\" (click)=\"editProduct(product._id)\" style=\"float: left;margin-top: 18px;margin-right: 15px;\" type=\"button\" class=\"btn btn-primary btn-lg\">\r\n            Edit\r\n          </button>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -627,13 +613,6 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/component/login/logInBG.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "logInBG.41efaacbbced79885e44.jpg";
-
-/***/ }),
-
 /***/ "../../../../../src/app/component/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -643,7 +622,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /*background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/app/component/login/logInBG.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 150px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(86, 102, 115, 0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /*background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/assets/images/logInBG.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 150px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(86, 102, 115, 0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -767,7 +746,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/component/navigation/navigation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"wrap\">\r\n  <header>\r\n    <div class=\"inner relative\">\r\n      <h3 style=\"color:  #ffffff; font: normal 60px 'Cookie', cursive;\">Car <span style=\"color:  #5383d3;\">Market</span></h3>\r\n      <!--<a href=\"/home\">Car Market</a>-->\r\n      <a id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"icon-reorder\"></i></a>\r\n      <nav id=\"navigation\">\r\n        <ul id=\"main-menu\">\r\n\r\n          <li><a href=\"/home\">Home</a></li>\r\n\r\n          <!--<li class=\"parent\">-->\r\n            <!--<a href=\"/register\">Register</a>-->\r\n            <!--<ul class=\"sub-menu\">-->\r\n              <!--<li><a href=\"#\"><i class=\"icon-wrench\"></i> Elements</a></li>-->\r\n              <!--<li><a href=\"#\"><i class=\"icon-credit-card\"></i>  Pricing Tables</a></li>-->\r\n              <!--<li><a href=\"#\"><i class=\"icon-gift\"></i> Icons</a></li>-->\r\n              <!--<li>-->\r\n                <!--<a class=\"parent\" href=\"#\"><i class=\"icon-file-alt\"></i> Pages</a>-->\r\n                <!--<ul class=\"sub-menu\">-->\r\n                  <!--<li><a href=\"#\">Full Width</a></li>-->\r\n                  <!--<li><a href=\"#\">Left Sidebar</a></li>-->\r\n                  <!--<li><a href=\"#\">Right Sidebar</a></li>-->\r\n                  <!--<li><a href=\"#\">Double Sidebar</a></li>-->\r\n                <!--</ul>-->\r\n              <!--</li>-->\r\n            <!--</ul>-->\r\n          <!--</li>-->\r\n\r\n          <!--<li><a href=\"/login\">login</a></li>-->\r\n\r\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/login']\"> Login</a>\r\n          </li>\r\n\r\n          <li *ngIf=\"isAdmin\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/product']\"> Add Product</a>\r\n          </li>\r\n\r\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/cart']\"><i class=\"glyphicon glyphicon-shopping-cart\"></i>\r\n            <span class=\"badge\">{{ productService.getProductCartSize() || cart }}</span>\r\n            </a>\r\n          </li>\r\n\r\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/profile']\"> Profile </a>\r\n          </li>\r\n\r\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a  (click)=\"onLogoutClick()\"  [routerLink]=\"['/home']\"> Logout</a>\r\n          </li>\r\n\r\n          <!--<li class=\"parent\">-->\r\n            <!--<a href=\"#\">User Info</a>-->\r\n            <!--<ul class=\"sub-menu\"  *ngIf=\"authService.loggedIn()\">-->\r\n              <!--<li><a href=\"/profile\">Profile</a></li>-->\r\n              <!--<li><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>-->\r\n            <!--</ul>-->\r\n          <!--</li>-->\r\n\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n  </header>\r\n</div>\r\n"
+module.exports = "<div id=\"wrap\">\r\n  <header>\r\n    <div class=\"inner relative\">\r\n      <h3 style=\"color:  #ffffff; font: normal 60px 'Cookie', cursive;\">Car <span style=\"color:  #5383d3;\">Market</span></h3>\r\n      <!--<a href=\"/home\">Car Market</a>-->\r\n      <a id=\"menu-toggle\" class=\"button dark\" href=\"#\"><i class=\"icon-reorder\"></i></a>\r\n      <nav id=\"navigation\">\r\n        <ul id=\"main-menu\">\r\n\r\n          <li><a href=\"/home\">Home</a></li>\r\n\r\n          <!--<li class=\"parent\">-->\r\n            <!--<a href=\"/register\">Register</a>-->\r\n            <!--<ul class=\"sub-menu\">-->\r\n              <!--<li><a href=\"#\"><i class=\"icon-wrench\"></i> Elements</a></li>-->\r\n              <!--<li><a href=\"#\"><i class=\"icon-credit-card\"></i>  Pricing Tables</a></li>-->\r\n              <!--<li><a href=\"#\"><i class=\"icon-gift\"></i> Icons</a></li>-->\r\n              <!--<li>-->\r\n                <!--<a class=\"parent\" href=\"#\"><i class=\"icon-file-alt\"></i> Pages</a>-->\r\n                <!--<ul class=\"sub-menu\">-->\r\n                  <!--<li><a href=\"#\">Full Width</a></li>-->\r\n                  <!--<li><a href=\"#\">Left Sidebar</a></li>-->\r\n                  <!--<li><a href=\"#\">Right Sidebar</a></li>-->\r\n                  <!--<li><a href=\"#\">Double Sidebar</a></li>-->\r\n                <!--</ul>-->\r\n              <!--</li>-->\r\n            <!--</ul>-->\r\n          <!--</li>-->\r\n\r\n          <!--<li><a href=\"/login\">login</a></li>-->\r\n\r\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/login']\"> Login</a>\r\n          </li>\r\n\r\n          <li *ngIf=\"isAdmin\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/product']\"> Add Product</a>\r\n          </li>\r\n\r\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/cart']\"><i class=\"glyphicon glyphicon-shopping-cart\"></i>\r\n            <span class=\"badge\">{{ productService.getProductCartSize()}}</span>\r\n            </a>\r\n          </li>\r\n\r\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a [routerLink]=\"['/profile']\"> Profile </a>\r\n          </li>\r\n\r\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\" >\r\n            <a  (click)=\"onLogoutClick()\"  [routerLink]=\"['/home']\"> Logout</a>\r\n          </li>\r\n\r\n          <!--<li class=\"parent\">-->\r\n            <!--<a href=\"#\">User Info</a>-->\r\n            <!--<ul class=\"sub-menu\"  *ngIf=\"authService.loggedIn()\">-->\r\n              <!--<li><a href=\"/profile\">Profile</a></li>-->\r\n              <!--<li><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>-->\r\n            <!--</ul>-->\r\n          <!--</li>-->\r\n\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n  </header>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -803,8 +782,9 @@ var NavigationComponent = /** @class */ (function () {
         this.router = router;
         this.flashMessage = flashMessage;
         this.isAdmin = 0;
-        if (localStorage.getItem('isAdmin') == 'true')
+        if (localStorage.getItem('isAdmin') == 'true') {
             this.isAdmin = 1;
+        }
         console.log(this.isAdmin);
     }
     NavigationComponent.prototype.ngOnInit = function () {
@@ -903,7 +883,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".bg {\r\n  background-image: url(" + escape(__webpack_require__("../../../../../src/app/component/photo-upload/upload.jpg")) + ");\r\n  min-height: 405px;\r\n}\r\n\r\n.header-section{\r\n    height: 80px;\r\n    line-height: 80px;\r\n    color: beige;\r\n    background-color: rgb(46, 43, 43);\r\n    font-size: 24px;\r\n    padding-left: 20px;\r\n  }\r\n\r\n.row {\r\n  min-height: 200px;\r\n}\r\n\r\n.card{\r\n    background-color: rgba(200,150,90,0.4);\r\n    -webkit-box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\r\n            box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\r\n    color:black;\r\n    font-size: 20px;\r\n    margin: 20px;\r\n    padding: 10px;\r\n  }\r\n\r\n.uploadList{\r\n    padding: 10px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n  }\r\n", ""]);
+exports.push([module.i, ".bg {\r\n  background-image: url(" + escape(__webpack_require__("../../../../../src/assets/images/upload.jpg")) + ");\r\n  min-height: 405px;\r\n}\r\n\r\n.header-section{\r\n    height: 80px;\r\n    line-height: 80px;\r\n    color: beige;\r\n    background-color: rgb(46, 43, 43);\r\n    font-size: 24px;\r\n    padding-left: 20px;\r\n  }\r\n\r\n.row {\r\n  min-height: 200px;\r\n}\r\n\r\n.card{\r\n    background-color: rgba(200,150,90,0.4);\r\n    -webkit-box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\r\n            box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);\r\n    color:black;\r\n    font-size: 20px;\r\n    margin: 20px;\r\n    padding: 10px;\r\n  }\r\n\r\n.uploadList{\r\n    padding: 10px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n  }\r\n", ""]);
 
 // exports
 
@@ -951,7 +931,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var uri = 'http://localhost:3000/product';
+var uri = 'product';
+// const uri = 'http://localhost:3000/product';
 var ur2;
 var PhotoUploadComponent = /** @class */ (function () {
     // http://localhost:4200/photo/5aca319a784c6127c01e3f48
@@ -962,7 +943,8 @@ var PhotoUploadComponent = /** @class */ (function () {
         this.router = router;
         this.attachmentList = [];
         var id = this.route.snapshot.paramMap.get('id');
-        ur2 = "http://localhost:3000/product/" + id;
+        ur2 = "product/" + id;
+        // ur2 = `http://localhost:3000/product/${id}`;
         console.log('Here ' + id + ' there');
         console.log(ur2);
         this.product = [];
@@ -992,20 +974,6 @@ var PhotoUploadComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/component/photo-upload/upload.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "upload.55b85af229c0bb28ccc7.jpg";
-
-/***/ }),
-
-/***/ "../../../../../src/app/component/product-edit/most-bg.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "most-bg.94de0fec8f34d6262145.jpg";
-
-/***/ }),
-
 /***/ "../../../../../src/app/component/product-edit/product-edit.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1015,7 +983,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/app/component/product-edit/most-bg.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(133, 150, 150,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/assets/images/most-bg.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(133, 150, 150,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1100,13 +1068,6 @@ var ProductEditComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/component/product/addProduct.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "addProduct.368b53eb9df3c11c4714.jpg";
-
-/***/ }),
-
 /***/ "../../../../../src/app/component/product/product.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1116,7 +1077,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/app/component/product/addProduct.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(133, 150, 150,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/assets/images/addProduct.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(133, 150, 150,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1214,7 +1175,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".bg2 {\r\n  background-image: url(" + escape(__webpack_require__("../../../../../src/app/component/profile/profile.jpg")) + ");\r\n}\r\n\r\n.thumbnail {\r\n  background-color: rgba(200,230,240,.8);\r\n}\r\n\r\n.title {\r\n  text-align: center;\r\n  font-size: 200%;\r\n  background-color: rgba(120,120,120,0.7);\r\n}\r\n", ""]);
+exports.push([module.i, ".bg2 {\r\n  background-image: url(" + escape(__webpack_require__("../../../../../src/assets/images/profile.jpg")) + ");\r\n}\r\n\r\n.thumbnail {\r\n  background-color: rgba(200,230,240,.8);\r\n}\r\n\r\n.title {\r\n  text-align: center;\r\n  font-size: 200%;\r\n  background-color: rgba(120,120,120,0.7);\r\n}\r\n", ""]);
 
 // exports
 
@@ -1301,20 +1262,6 @@ var ProfileComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/component/profile/profile.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "profile.f829ec327eea2ca21301.jpg";
-
-/***/ }),
-
-/***/ "../../../../../src/app/component/registration/logInBG.jpg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "logInBG.ca24ad5ce46947e4ff91.jpg";
-
-/***/ }),
-
 /***/ "../../../../../src/app/component/registration/registration.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1324,7 +1271,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/app/component/registration/logInBG.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(51, 204, 255,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "#playground-container {\r\n  height: 500px;\r\n  overflow: hidden !important;\r\n  -webkit-overflow-scrolling: touch;\r\n}\r\n.bg{\r\n  height: 100%;\r\n  background-repeat: no-repeat;\r\n  /* background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);\r\n  background:url(http://t.wallpaperweb.org/wallpaper/cars/1920x1200/Ferrari_6.jpg);*/\r\n  background:url(" + escape(__webpack_require__("../../../../../src/assets/images/logInBG.jpg")) + ");\r\n  font-family: 'Oxygen', sans-serif;\r\n  background-size: cover;\r\n  padding: 50px 20px;\r\n}\r\n.main{\r\n  margin:50px 15px;\r\n}\r\nh1.title {\r\n  font-size: 50px;\r\n  font-family: 'Passion One', cursive;\r\n  font-weight: 400;\r\n}\r\nhr{\r\n  width: 10%;\r\n  color: #fff;\r\n}\r\n.form-group{\r\n  margin-bottom: 15px;\r\n}\r\nlabel{\r\n  margin-bottom: 15px;\r\n}\r\ninput,\r\ninput::-webkit-input-placeholder {\r\n  font-size: 11px;\r\n  padding-top: 3px;\r\n}\r\n.main-login{\r\n  background-color: #fff;\r\n  /* shadows and rounded borders */\r\n  border-radius: 2px;\r\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\r\n\r\n}\r\n.form-control {\r\n  height: auto!important;\r\n  padding: 8px 12px !important;\r\n}\r\n.input-group {\r\n  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;\r\n}\r\n#button {\r\n  border: 1px solid #ccc;\r\n  margin-top: 28px;\r\n  padding: 6px 12px;\r\n  color: #666;\r\n  text-shadow: 0 1px #fff;\r\n  cursor: pointer;\r\n  border-radius: 3px 3px;\r\n  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  box-shadow: 0 1px #fff inset, 0 1px #ddd;\r\n  background: #f5f5f5;\r\n  background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);\r\n}\r\n.main-center{\r\n  margin-top: 30px;\r\n  margin: 0 auto;\r\n  max-width: 500px;\r\n  padding: 15px 25px;\r\n  background: rgba(51, 204, 255,0.5);\r\n  color: #FFF;\r\n  border-radius: 15px;\r\n  text-shadow: none;\r\n  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);\r\n\r\n}\r\nspan.input-group-addon i {\r\n  color: #009edf;\r\n  font-size: 17px;\r\n}\r\n.login-button{\r\n  margin-top: 5px;\r\n}\r\n.login-register{\r\n  font-size: 11px;\r\n  text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1781,6 +1728,48 @@ var ValidateService = /** @class */ (function () {
 }());
 
 
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/addProduct.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "addProduct.368b53eb9df3c11c4714.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/home-bg2.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "home-bg2.94ec6f3233b3f8a57ad7.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/logInBG.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "logInBG.41efaacbbced79885e44.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/most-bg.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "most-bg.94de0fec8f34d6262145.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/profile.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "profile.f829ec327eea2ca21301.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/images/upload.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "upload.55b85af229c0bb28ccc7.jpg";
 
 /***/ }),
 

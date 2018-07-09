@@ -8,7 +8,8 @@
 
       <h3 (click)="detailsView(product._id)" style="color: #26734d;text-align: center">{{product.name}}</h3>
 
-      <img (click)="detailsView(product._id)" src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">
+      <img (click)="detailsView(product._id)" src="upload/{{product.picture}}" alt="..." class="img-responsive">
+      <!--<img (click)="detailsView(product._id)" src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">-->
       <div class="caption">
         <div class="clearfix">
           <div class="price pull-left">{{ product.price }} ৳</div>

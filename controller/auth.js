@@ -8,14 +8,14 @@ var userLogin = (req, res, next) => {
 
     User.findOne({email: email}, (err, user) => {
         if(err) {
-            
+            console.log(err);
         }
         else {
             User.comparePassword(password, user.password, (err, match) => {
                 if(err) {
-                    
+                    console.log(err);
                 } else if(match) {
-                    var token = jwt.sign(user, config.secret, {expiresIn: config.tokenexp});
+                    var token = jwt.sign(user.toJSON(), config.secret, {expiresIn: config.tokenexp});
                     return res.status(201).json({success: true, data: user, token: token });
                 } else {
                     return res.status(404).json({
