@@ -1,6 +1,6 @@
 # Car Market
 
-Car Market is an E-Commerce web application where users can visit, see and buy beautiful cars. This application is created to implement shopping cart. It is a [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) application.
+Car Market is an E-Commerce web application where users can visit, see and buy beautiful cars. This application is created to implement shopping cart. It is a [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) application.  Visit the web application [Live](https://infinite-sierra-61239.herokuapp.com).
 
 ## Technologies
   1. Frontend: **Angular**
@@ -22,23 +22,18 @@ Car Market is an E-Commerce web application where users can visit, see and buy b
   2. Open a terminal in this directory
   3. Install dependencies : `npm install --save`
   4. Run server : `node server.js`
+  5. Visit: `localhost:8080`
  
- Do not forget to start your database before running server.
+  That's it! Explore the application. Admin can add, update, delete any product and also manage users. Register as user visit home page   see the differences.
   
-**Open another terminal in the directory**
+**To run client-side(angular) manually open another terminal in the directory**
 
-  5. Navigate to client directory : `cd client`
-  6. Install dependencies : `npm install --save`
-  7. Run client : `ng serve`
-  8. Visit: `localhost:4200/home`
+  1. Navigate to client directory : `cd client`
+  2. Install dependencies : `npm install --save`
+  3. Change every route of angular to `http://localhost:`_8080-or-your-database-port-no_`/`_route_
+  4. Run client : `ng serve`
+  5. Visit: `localhost:4200/home`
 
-## Usage
-After completing installation create at least one Admin. Here are the steps,
-  1. Register an account. 
-  2. Open any GUI for MongoDB ( Compass/ Robo3T )
-  3. Change the created user's isAdmin property to true
-
-Thus we will get an Admin. Now we can add, update, delete any product and also manage users from Admin account. Now register some users, add some products and visit home page.
 
 ## UI-Design with Angular
 
