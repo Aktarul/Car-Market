@@ -26,11 +26,11 @@ Car Market is an E-Commerce web application where users can visit, see and buy b
  
   That's it! Explore the application. Admin can add, update, delete any product and also manage users. Register as user visit home page   see the differences.
   
-**To run client-side(angular) manually open another terminal in the directory**
+**To run client-side(angular project) manually open another terminal in the directory**
 
   1. Navigate to client directory : `cd client`
   2. Install dependencies : `npm install --save`
-  3. Change every route of angular to `http://localhost:`_8080-or-your-database-port-no_`/`_route_
+  3. Change every route of angular project to `http://localhost:`_8080-or-your-database-port-no_`/`_route_
   4. Run client : `ng serve`
   5. Visit: `localhost:4200/home`
 
