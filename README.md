@@ -1,6 +1,6 @@
 # Car Market
 
-Car Market is an E-Commerce web application where users can visit, see and buy beautiful cars. This application is created to implement shopping cart. It is a [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) application.  Visit the web application [Live](https://infinite-sierra-61239.herokuapp.com).
+It is an academic project built for the implementation of shopping cart. It is a single shop platform where people can buy beautiful cars. JSON Web Token(JWT) is used for authentication. It is a [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) application.  Visit the web application [Live](https://infinite-sierra-61239.herokuapp.com).
 
 ## Technologies
   1. Frontend: **Angular**
